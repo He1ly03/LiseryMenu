@@ -106,27 +106,55 @@ LiseryMenu задуман как современный аналог DeluxMenus:
 
 1. **Создайте меню через команду:**
    ```
-   /lm create shop
+   /lm create vip
    ```
 
-2. **Откройте файл** `plugins/LiseryMenu/menus/shop.yml`
+2. **Откройте файл** `plugins/LiseryMenu/menus/vip.yml`
 
 3. **Отредактируйте меню:**
    ```yaml
-   title: "<#ff7a1b>Магазин"
-   size: 27
-   open_command: "shop"
+   title: "<#ff7a1b>⭐ <white>Донат Статус</white>"
+   size: 9
+   open_command: "stats"
+   hide_items: false
    
    items:
-     diamond:
-       slot: "13"
-       material: DIAMOND
-       display_name: "<#9cff6b>Алмаз"
-       lore:
-         - "<gray>Цена: <yellow>1000$"
-       left_click_actions:
-         - "[message] <green>Покупка выполнена!"
-         - "[close]"
+     vip_status:
+       display_condition:
+         if: "permission: donate.vip"
+         then:
+           slot: "4"
+           material: GOLD_BLOCK
+           display_name: "<#ffd27f>VIP Статус"
+           lore:
+             - ""
+             - "<#ffd27f>Вы обладатель VIP статуса!"
+             - "<gray>Спасибо за поддержку сервера."
+             - ""
+             - "<gray>Бонусы:"
+             - "<white>• Дополнительные команды"
+             - "<white>• Приоритет в очереди"
+             - "<white>• Ежедневные бонусы"
+             - ""
+             - "<yellow>ПКМ › Узнать больше"
+           glowing: true
+           right_click_actions:
+             - "[message] <#ffd27f>VIP Бонусы:"
+             - "[message] <gray>• Дополнительные команды"
+             - "[message] <gray>• Приоритет в очереди"
+             - "[message] <gray>• Ежедневные бонусы"
+         else:
+           slot: "40"
+           material: GOLD_BLOCK
+           display_name: "<yellow>Получите VIP"
+           lore:
+             - ""
+             - "<gray>Поддержите сервер и получите"
+             - "<gray>VIP статус с бонусами!"
+             - ""
+             - "<yellow>ПКМ › Узнать больше"
+           right_click_actions:
+             - "[message] <#ffd27f>Получите VIP статус, поддержав сервер!"
    ```
 
 4. **Перезагрузите меню:**
@@ -136,7 +164,7 @@ LiseryMenu задуман как современный аналог DeluxMenus:
 
 5. **Откройте меню:**
    ```
-   /shop
+   /vip
    ```
 
 ---
@@ -1233,4 +1261,5 @@ LiseryMenu is a lightweight menu plugin for Minecraft 1.21–1.21.10 (Paper/Spig
 ---
 
 **Наслаждайтесь использованием LiseryMenu! 🎉**
+
 
