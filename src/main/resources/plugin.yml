@@ -1,0 +1,38 @@
+name: LiseryMenu
+version: '1.0'
+main: He1ly03.LiseryMenu
+api-version: '1.21'
+author: He1ly03
+description: Легкая и мощная система создания меню для Minecraft серверов
+softdepend: [PlaceholderAPI, ItemsAdder, Oraxen, Nexo]
+
+commands:
+  lm:
+    description: Главная команда LiseryMenu
+    aliases: [liserymenu, lisery]
+    usage: /lm <create|open|reload|list|help>
+
+permissions:
+  liserymenu.*:
+    description: Полный доступ к LiseryMenu
+    default: op
+    children:
+      liserymenu.create: true
+      liserymenu.open: true
+      liserymenu.reload: true
+      liserymenu.list: true
+  liserymenu.create:
+    description: Создание новых меню
+    default: op
+  liserymenu.open:
+    description: Открытие меню
+    default: true
+  liserymenu.open.*:
+    description: Открытие любого меню
+    default: true
+  liserymenu.reload:
+    description: Перезагрузка плагина
+    default: op
+  liserymenu.list:
+    description: Просмотр списка меню
+    default: true
