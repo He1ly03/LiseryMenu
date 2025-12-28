@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'maven-publish'
     id("xyz.jpenilla.run-paper") version "2.3.1"
 }
 
@@ -59,5 +60,54 @@ processResources {
     filteringCharset 'UTF-8'
     filesMatching('plugin.yml') {
         expand props
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/He1ly03/LiseryMenu")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
+                password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            from(components.java)
+            
+            groupId = 'He1ly03'
+            artifactId = 'LiseryMenu'
+            version = project.version
+            
+            pom {
+                name = 'LiseryMenu'
+                description = 'Advanced GUI menu plugin for Paper/Spigot servers'
+                url = 'https://github.com/He1ly03/LiseryMenu'
+                
+                licenses {
+                    license {
+                        name = 'MIT License'
+                        url = 'https://opensource.org/licenses/MIT'
+                    }
+                }
+                
+                developers {
+                    developer {
+                        id = 'He1ly03'
+                        name = 'He1ly03'
+                        email = 'he1ly03.dev@gmail.com'
+                    }
+                }
+                
+                scm {
+                    connection = 'scm:git:https://github.com/He1ly03/LiseryMenu.git'
+                    developerConnection = 'scm:git:https://github.com/He1ly03/LiseryMenu.git'
+                    url = 'https://github.com/He1ly03/LiseryMenu'
+                }
+            }
+        }
     }
 }

@@ -1,0 +1,69 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# NetBeans
+nbproject/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# VS Code
+.vscode/
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Compiled class files
+*.class
+
+# JAR files (except wrapper)
+*.jar
+!gradle-wrapper.jar
+
+# Test output
+test-output/
+test-results/
+
+# Run directory (for testing)
+run/
+
+# Credentials and tokens
+local.properties
+!gradle.properties
+*.token
+*.key
+.env
+.env.local
+
