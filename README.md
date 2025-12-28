@@ -2,6 +2,7 @@
 
 > Легковесная и мощная система создания меню для Minecraft 1.21–1.21.10, с современным синтаксисом YAML и динамическим поведением.
 
+[![](https://jitpack.io/v/He1ly03/LiseryMenu.svg)](https://jitpack.io/#He1ly03/LiseryMenu)
 ![Minecraft](https://img.shields.io/badge/Minecraft-1.21%E2%80%931.21.10-47A248?logo=minecraft&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-21-ED8B00?logo=openjdk&logoColor=white)
 ![Platform](https://img.shields.io/badge/Platform-Paper%20%7C%20Spigot-blueviolet)
@@ -1106,6 +1107,7 @@ items:
 ---
 
 **Наслаждайтесь использованием LiseryMenu! 🎉**
+
 
 
 
